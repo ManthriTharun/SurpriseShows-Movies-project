@@ -14,6 +14,7 @@ const imagesArray = [
   { bg: "./images/majorBG.png", name: "Major" },
   { bg: "./images/devaraBG.webp", name: "Devara" },
 ];
+const intervalID = setInterval(changebg, 5000);
 let counter = 0;
 function changebg() {
   homebg.style.backgroundImage = ` radial-gradient(
@@ -60,7 +61,6 @@ function changebg() {
     counter = 0;
   }
 }
-const intervalID = setInterval(changebg, 5000);
 function Stop(movie) {
   alert("Stoped");
   clearInterval(intervalID);
