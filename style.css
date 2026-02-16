@@ -1,0 +1,213 @@
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.logo-menu-container {
+  position: fixed;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 4.5em;
+  align-items: center;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.logo-container {
+  font-size: 3rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: linear-gradient(to right, rgb(223, 2, 2), rgb(236, 174, 6));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.logo-container p {
+  font-weight: bold;
+}
+.menu-container {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.menu-list li {
+  list-style-type: none;
+  display: inline;
+  padding: 0 0.5em;
+  color: white;
+}
+
+.search-container {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  justify-content: center;
+  color: white;
+}
+.ctn-btn {
+  font-size: 1.5rem;
+  background: linear-gradient(to right, rgb(223, 2, 2), rgb(236, 174, 6));
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.4em 0.9em;
+  color: black;
+  font-weight: bold;
+}
+.display-container-home {
+  background:
+    radial-gradient(
+      farthest-side at 70% 40%,
+      rgba(255, 255, 255, 0.126),
+      rgba(0, 0, 0, 0.625),
+      rgb(0, 0, 0)
+    ),
+    url(./images/jersey11.jpeg);
+  background-size: cover;
+  height: 100vh;
+  transition: all 3000ms ease-in-out;
+}
+.sub-home-page {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+.movie-description {
+  display: flex;
+  padding: 28rem 0 0 7rem;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+}
+.movied-1 {
+  background-color: rgba(124, 88, 46, 0.538);
+  color: rgb(255, 149, 0);
+  font-size: 1.4rem;
+  padding: 0.5em 1em;
+  border: 0.1rem solid rgba(255, 149, 0, 0.25);
+  border-radius: 5em;
+  width: fit-content;
+}
+.movie-h {
+  color: white;
+  font-size: 6.6rem;
+}
+.movie-r {
+  display: flex;
+  color: rgba(129, 122, 122, 0.882);
+  font-size: 1.4rem;
+  align-items: center;
+  gap: 1em;
+}
+.star {
+  font-size: 1.5rem;
+  color: rgb(255, 191, 0);
+}
+.fa-clock {
+  font-size: 1.5rem;
+}
+
+.small-btn {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.934);
+  background-color: rgb(31, 28, 45);
+  border-radius: 1em;
+  padding: 0.25em 0.75em;
+}
+.movie-p {
+  font-size: 1.7rem;
+  color: rgba(129, 122, 122, 0.882);
+  font-weight: medium;
+}
+.movie-btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.watch-now-btn {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, rgb(223, 2, 2), rgb(236, 174, 6));
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 2rem 3.5rem;
+  border: none;
+}
+.watch-list-btn {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: black;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 2rem 3.5rem;
+  border: 0.1rem solid rgba(142, 142, 142, 0.21);
+}
+.vertical-movies {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 10rem 2rem 0 0;
+  gap: 1rem;
+  width: 50%;
+}
+.movieCard {
+  background-color: blue;
+  height: 160px;
+  border-radius: 1rem;
+  width: 100px;
+  opacity: 0.5;
+}
+.mone {
+  background: url(./images/bhahubali2.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition: all 0.3s linear;
+}
+.mone:hover {
+  background-size: 145%;
+  opacity: 1;
+}
+.mtwo {
+  background: url(./images/small2.jpeg);
+  background-size: 130%;
+  background-position: center;
+  transition: all 0.3s linear;
+}
+.mtwo:hover {
+  background-size: 145%;
+  opacity: 1;
+}
+.mthree {
+  background: url(./images/major.jpg);
+  background-size: 115%;
+  background-position: center;
+  transition: all 0.3s linear;
+}
+.mthree:hover {
+  background-size: 130%;
+  opacity: 1;
+}
+.mfour {
+  background: url(./images/devara.jpg);
+  background-size: 115%;
+  background-position: center;
+  transition: all 0.3s linear;
+}
+.mfour:hover {
+  background-size: 130%;
+  opacity: 1;
+}
