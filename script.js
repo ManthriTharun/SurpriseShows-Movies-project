@@ -16,6 +16,7 @@ const imagesArray = [
 ];
 const intervalID = setInterval(changebg, 5000);
 let counter = 0;
+
 function changebg() {
   homebg.style.backgroundImage = ` radial-gradient(
       farthest-side at 70% 40%,
@@ -61,9 +62,34 @@ function changebg() {
     counter = 0;
   }
 }
-function Stop(movie) {
-  alert("Stoped");
+
+window.Select = function (cardItem) {
   clearInterval(intervalID);
-  console.log(movie);
-}
-movieCard1.addEventListener("click", Stop(Target));
+
+  for (let i = 0; i < imagesArray.length; i++) {
+    cardArray[i].style.opacity = 0.5;
+    cardArray[i].style.border = "none";
+  }
+
+  homebg.style.backgroundImage = ` radial-gradient(
+      farthest-side at 70% 40%,
+      rgba(255, 255, 255, 0.126),
+      rgba(0, 0, 0, 0.625),
+      rgb(0, 0, 0)
+    ),url(${imagesArray[cardItem].bg})`;
+  movieName.textContent = `${imagesArray[cardItem].name}`;
+  const element = cardArray.find((value, index) => index == cardItem);
+
+  element.style.opacity = 1;
+  element.style.border = "3px solid yellow";
+  setTimeout(() => setInterval(changebg, 5000), 6000);
+};
+
+window.addEventListener("scroll", function () {
+  const navbar = this.document.querySelector(".logo-menu-container");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
