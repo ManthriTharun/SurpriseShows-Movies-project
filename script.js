@@ -142,29 +142,24 @@ function changebg() {
   }, 500);
 }
 
-
 /* Adding event listener to movie card items for clicking each card */
 movieCard1.addEventListener("click", () => Select(1));
 movieCard2.addEventListener("click", () => Select(0));
 movieCard3.addEventListener("click", () => Select(2));
 movieCard4.addEventListener("click", () => Select(3));
 
-
-
-
 /* Function for card items , whenever click the card the below operations will performed */
 window.Select = function (cardItem) {
- if(intervalID){
-  clearInterval(intervalID);
-  intervalID=null;
- }
- 
-  
-  cardArray.forEach((item)=>{
-    item.style.border="none"
-    item.style.opacity=0.5;
-  })
-  
+  if (intervalID) {
+    clearInterval(intervalID);
+    intervalID = null;
+  }
+
+  cardArray.forEach((item) => {
+    item.style.border = "none";
+    item.style.opacity = 0.5;
+  });
+
   bgLayer.style.backgroundImage = ` radial-gradient(
       farthest-side at 70% 40%,
       rgba(255, 255, 255, 0.126),
@@ -172,14 +167,20 @@ window.Select = function (cardItem) {
       rgb(0, 0, 0)
     ),url(${imagesArray[cardItem].bg})`;
   movieName.textContent = `${imagesArray[cardItem].name}`;
-  const element = cardArray.find((value, index) => 
-    {
-      
-      return index == cardItem});
- 
+  time.textContent = `${imagesArray[cardItem].duration}`;
+  year.textContent = `${imagesArray[cardItem].year}`;
+  moviedes.textContent = `${imagesArray[cardItem].description}`;
+  star.textContent = `${imagesArray[cardItem].rating}`;
+  firstsmall.textContent = `${imagesArray[cardItem].genre1}`;
+  secondsmall.textContent = `${imagesArray[cardItem].genre2}`;
+
+  const element = cardArray.find((value, index) => {
+    return index == cardItem;
+  });
+
   element.style.opacity = 1;
   element.style.border = "3px solid yellow";
- setTimeout(restart,10000);
+  setTimeout(restart, 10000);
 };
 
 
