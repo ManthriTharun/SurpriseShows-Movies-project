@@ -2,7 +2,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10px;
 }
-* {
+* { 
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -67,6 +67,11 @@
   font-weight: bold;
 }
 .display-container-home {
+    position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  z-index:2;
   background:
     radial-gradient(
       farthest-side at 70% 40%,
@@ -77,16 +82,28 @@
     url(./images/jersey11.jpeg);
   background-size: cover;
   height: 100vh;
-  transition: all 3000ms ease-in-out;
+  transition: all 3000ms ease-in-out; 
+}
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+ 
+  opacity: 1;
+  transition: opacity 1.2s ease;
+  z-index:1;
 }
 .sub-home-page {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  position: relative;
+  z-index:5;
 }
 .movie-description {
   display: flex;
   padding: 28rem 0 0 7rem;
+  position: relative;
   flex-direction: column;
   gap: 2rem;
   width: 50%;
@@ -164,10 +181,12 @@
 .vertical-movies {
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: end;
   padding: 10rem 2rem 0 0;
   gap: 1rem;
   width: 50%;
+ z-index:  3000;
 }
 .movieCard {
   background-color: blue;
@@ -175,12 +194,14 @@
   border-radius: 1rem;
   width: 100px;
   opacity: 0.5;
+  
 }
 .mone {
   background: url(./images/bhahubali2.jpg);
   background-size: 130%;
   background-position: center;
   transition: all 0.3s linear;
+
 }
 .mone:hover {
   background-size: 145%;
@@ -191,6 +212,7 @@
   background-size: 130%;
   background-position: center;
   transition: all 0.3s linear;
+  
 }
 .mtwo:hover {
   background-size: 145%;
@@ -201,6 +223,7 @@
   background-size: 115%;
   background-position: center;
   transition: all 0.3s linear;
+
 }
 .mthree:hover {
   background-size: 130%;
@@ -211,11 +234,26 @@
   background-size: 115%;
   background-position: center;
   transition: all 0.3s linear;
+
 }
 .mfour:hover {
   background-size: 130%;
   opacity: 1;
 }
-.hello{
-  height:100vh;
+.active130{
+  background-size: 130%;
+}
+.active115{
+  background-size: 115%;
+}.active145{
+  background-size: 145%;
+}
+.border{
+  border:3px solid yellow;
+}
+.opacity1{
+  opacity:1;
+}
+.opacity05{
+  opacity:0;
 }
