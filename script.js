@@ -8,31 +8,70 @@ const movieCard2 = document.querySelector(".mtwo");
 const movieCard3 = document.querySelector(".mthree");
 const movieCard4 = document.querySelector(".mfour");
 const bgLayer = document.querySelector(".bg-layer");
-
-
-
+const star = document.querySelector(".star");
+const time = document.querySelector(".clockP");
+const firstsmall = document.querySelector(".firstsmall");
+const secondsmall = document.querySelector(".secondsmall");
+const moviedes = document.querySelector(".movie-p");
+const year = document.querySelector(".year");
 /* CardArray (MovieCards) */
 const cardArray = [movieCard2, movieCard1, movieCard3, movieCard4];
 
-
 /* imagesArray of Objects */
 const imagesArray = [
-  { bg: "./images/jersey11.jpeg", name: "Jersey" },
-  { bg: "./images/baahubaliBG.jpg", name: "Baahubali 2" },
+  {
+    bg: "./images/jersey11.jpeg",
+    name: "Jersey",
+    rating: 8.5,
+    year: 2019,
+    genre1: "Sports",
+    genre2: "Emotional",
+    duration: "2h 40m",
+    description:
+      "A talented but failed cricketer in his 30s decides to return to the game to fulfill his son’s dream, proving that passion and determination have no age limit.",
+  },
+  {
+    bg: "./images/baahubaliBG.jpg",
+    name: "Baahubali 2",
+    rating: 8.2,
+    year: 2017,
+    genre1: "Epic",
+    genre2: "Historical Drama",
+    duration: "2h 47m",
+    description:
+      "Amarendra Baahubali’s legacy unfolds as Mahendra Baahubali rises to reclaim the throne and avenge betrayal in the kingdom of Mahishmati.",
+  },
 
-  { bg: "./images/majorBG.png", name: "Major" },
-  { bg: "./images/devaraBG.webp", name: "Devara" },
+  {
+    bg: "./images/majorBG.png",
+    name: "Major",
+    rating: 8.1,
+    year: 2022,
+    genre1: "Action",
+    genre2: "Biographical",
+    duration: "2h 29m",
+    description:
+      "Based on the life of Major Sandeep Unnikrishnan, the film showcases his courage and sacrifice during the 26/11 Mumbai attacks.",
+  },
+  {
+    bg: "./images/devaraBG.webp",
+    name: "Devara",
+    rating: 6.8,
+    year: 2024,
+    genre1: "Action",
+    genre2: "Drama",
+    duration: "2h 57m",
+    description:
+      "Set in a coastal region ruled by power and fear, Devara emerges as a fierce protector whose past and destiny shape the fate of his people.",
+  },
 ];
-
 
 /* TimeInterval for changing background */
 let intervalID = setInterval(changebg, 5000);
 let counter = 0;
-function restart(){
+function restart() {
   intervalID = setInterval(changebg, 5000);
 }
-
-
 
 /* Function to modify background for every 5seconds */
 function changebg() {
@@ -44,7 +83,7 @@ function changebg() {
       rgb(0, 0, 0),
       rgb(0, 0, 0)
     )`;
-  
+
   setTimeout(() => {
     bgLayer.style.backgroundImage = `
       radial-gradient(
@@ -59,6 +98,12 @@ function changebg() {
     bgLayer.style.opacity = 1;
 
     movieName.innerHTML = imagesArray[counter].name;
+    star.innerHTML = imagesArray[counter].rating;
+    time.innerHTML = imagesArray[counter].duration;
+    firstsmall.innerHTML = imagesArray[counter].genre1;
+    secondsmall.innerHTML = imagesArray[counter].genre2;
+    year.innerHTML = imagesArray[counter].year;
+    moviedes.innerHTML = imagesArray[counter].description;
 
     let card;
     for (let i = 0; i < imagesArray.length; i++) {

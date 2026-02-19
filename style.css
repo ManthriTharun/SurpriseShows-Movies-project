@@ -106,7 +106,7 @@
   position: relative;
   flex-direction: column;
   gap: 2rem;
-  width: 50%;
+  width: 45%;
 }
 .movied-1 {
   background-color: rgba(124, 88, 46, 0.538);
@@ -185,7 +185,7 @@
   align-items: end;
   padding: 10rem 2rem 0 0;
   gap: 1rem;
-  width: 50%;
+  width: 55%;
  z-index:  3000;
 }
 .movieCard {
