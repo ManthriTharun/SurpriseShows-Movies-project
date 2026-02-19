@@ -8,12 +8,18 @@ const movieCard2 = document.querySelector(".mtwo");
 const movieCard3 = document.querySelector(".mthree");
 const movieCard4 = document.querySelector(".mfour");
 const bgLayer = document.querySelector(".bg-layer");
-const star = document.querySelector(".star");
+const star = document.querySelector(".star1");
 const time = document.querySelector(".clockP");
 const firstsmall = document.querySelector(".firstsmall");
 const secondsmall = document.querySelector(".secondsmall");
 const moviedes = document.querySelector(".movie-p");
 const year = document.querySelector(".year");
+const slide1 = document.querySelector(".slide1");
+const slide0 = document.querySelector(".slide0");
+const slide2 = document.querySelector(".slide2");
+const slide3 = document.querySelector(".slide3");
+
+const slidingArray = [slide0, slide1, slide2, slide3];
 /* CardArray (MovieCards) */
 const cardArray = [movieCard2, movieCard1, movieCard3, movieCard4];
 
@@ -75,6 +81,13 @@ function restart() {
 
 /* Function to modify background for every 5seconds */
 function changebg() {
+  slidingArray.forEach((item, index) => {
+    item.classList.remove("sliding2");
+    if (counter == index) {
+      item.classList.add("sliding2");
+    }
+  });
+
   bgLayer.style.opacity = 0;
 
   homebg.style.backgroundImage = `radial-gradient(
@@ -147,6 +160,10 @@ movieCard1.addEventListener("click", () => Select(1));
 movieCard2.addEventListener("click", () => Select(0));
 movieCard3.addEventListener("click", () => Select(2));
 movieCard4.addEventListener("click", () => Select(3));
+slide1.addEventListener("click", () => Select(1));
+slide0.addEventListener("click", () => Select(0));
+slide2.addEventListener("click", () => Select(2));
+slide3.addEventListener("click", () => Select(3));
 
 /* Function for card items , whenever click the card the below operations will performed */
 window.Select = function (cardItem) {
@@ -154,6 +171,14 @@ window.Select = function (cardItem) {
     clearInterval(intervalID);
     intervalID = null;
   }
+
+  slidingArray.forEach((item, index) => {
+    if (cardItem == index) {
+      item.classList.add("sliding2");
+    } else {
+      item.classList.remove("sliding2");
+    }
+  });
 
   cardArray.forEach((item) => {
     item.style.border = "none";
@@ -180,7 +205,6 @@ window.Select = function (cardItem) {
 
   element.style.opacity = 1;
   element.style.border = "3px solid yellow";
-  setTimeout(restart, 10000);
 };
 
 
