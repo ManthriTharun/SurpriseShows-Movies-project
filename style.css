@@ -49,13 +49,14 @@
   color: rgb(91, 104, 112);
   font-size: 1.4rem;
   font-weight:normal;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
 }
 .menu-list li:hover{
   border-radius: 0.6em;
-  cursor: pointer;
   background-color: rgba(255, 255, 255, 0.354);
   color:white;
-
 }
 .sub-container{
   display: flex;
@@ -73,15 +74,18 @@
   background-color: rgb(67, 66, 63);
   border-radius: 5rem;
   height:0.4rem;
-  transition: all 0.6s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
 }
 .slide-bar div:hover{
-width:4rem;
-background-color: orange;
+  width:4rem;
+  background: linear-gradient(to right, rgb(88, 86, 86), rgb(89, 89, 88));
+  box-shadow: 0 0 15px rgba(236, 174, 6, 0.5);
 }
 .slide-bar .sliding2{
   width:4rem;
-  background-color: orange;
+  background: linear-gradient(to right, rgb(223, 2, 2), rgb(236, 174, 6));
+  box-shadow: 0 0 20px rgba(236, 174, 6, 0.6);
 }
 
 .search-container {
@@ -92,6 +96,16 @@ background-color: orange;
   justify-content: center;
   color: white;
 }
+
+.search-container i {
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.search-container i:hover {
+  transform: scale(1.2) rotate(10deg);
+  color: rgb(236, 174, 6);
+}
 .ctn-btn {
   font-size: 1.5rem;
   background: linear-gradient(to right, rgb(223, 2, 2), rgb(236, 174, 6));
@@ -100,6 +114,15 @@ background-color: orange;
   padding: 0.4em 0.9em;
   color: black;
   font-weight: bold;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(223, 2, 2, 0.2);
+}
+
+.ctn-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(223, 2, 2, 0.4);
+  letter-spacing: 0.3px;
 }
 .display-container-home {
     position: relative;
@@ -117,15 +140,17 @@ background-color: orange;
     url(./images/jersey11.jpeg);
   background-size: cover;
   height: 100vh;
-  transition: all 3000ms ease-in-out; 
-}
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+} 
+
+
 .bg-layer {
   position: absolute;
   inset: 0;
   background-size: cover;
  
   opacity: 1;
-  transition: opacity 1.2s ease;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index:1;
 }
 .sub-home-page {
@@ -200,6 +225,15 @@ background-color: orange;
   border-radius: 1rem;
   padding: 2rem 3.5rem;
   border: none;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(223, 2, 2, 0.3);
+}
+
+.watch-now-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(223, 2, 2, 0.5);
+  letter-spacing: 0.5px;
 }
 .watch-list-btn {
   font-size: 1.8rem;
@@ -212,6 +246,17 @@ background-color: orange;
   border-radius: 1rem;
   padding: 2rem 3.5rem;
   border: 0.1rem solid rgba(142, 142, 142, 0.21);
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.watch-list-btn:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.5px;
 }
 .vertical-movies {
   display: flex;
@@ -229,7 +274,8 @@ background-color: orange;
   border-radius: 1rem;
   width: 100px;
   opacity: 0.5;
-  
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
 }
 .mone {
   background: url(./images/bhahubali2.jpg);
@@ -241,6 +287,8 @@ background-color: orange;
 .mone:hover {
   background-size: 145%;
   opacity: 1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+ 
 }
 .mtwo {
   background: url(./images/small2.jpeg);
@@ -252,6 +300,8 @@ background-color: orange;
 .mtwo:hover {
   background-size: 145%;
   opacity: 1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  
 }
 .mthree {
   background: url(./images/major.jpg);
@@ -263,6 +313,8 @@ background-color: orange;
 .mthree:hover {
   background-size: 130%;
   opacity: 1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  
 }
 .mfour {
   background: url(./images/devara.jpg);
@@ -274,6 +326,8 @@ background-color: orange;
 .mfour:hover {
   background-size: 130%;
   opacity: 1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+
 }
 .active130{
   background-size: 130%;
@@ -291,4 +345,43 @@ background-color: orange;
 }
 .opacity05{
   opacity:0;
+}
+
+/* Premium smooth animations - Unified Direction */
+@keyframes uniformSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Apply animation classes - All unified upward direction - FAST */
+.animate-description {
+  animation: uniformSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-movied-1 {
+  animation: uniformSlideUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-movie-h {
+  animation: uniformSlideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.1s;
+}
+
+.animate-movie-r {
+  animation: uniformSlideUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.2s;
+}
+
+.animate-movie-p {
+  animation: uniformSlideUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.3s;
+}
+
+.animate-movie-btn {
+  animation: uniformSlideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.4s;
 }
