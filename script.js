@@ -237,54 +237,16 @@ window.Select = function (cardItem) {
 
     element.style.opacity = 1;
     element.style.border = "3px solid yellow";
-
-    // Trigger animations
-    applyAnimations();
-  }, 300);
-
-  // Set counter to current card and restart auto-sliding after 5 seconds
-  counter = cardItem + 1;
-  if (intervalID) {
-    clearInterval(intervalID);
-  }
-  intervalID = setInterval(changebg, 7000);
-};
-
-/* Function to remove animations */
-function removeAnimations() {
-  moviedesfull.classList.remove("animate-description");
-  movied1.classList.remove("animate-movied-1");
-  movieh.classList.remove("animate-movie-h");
-  movier.classList.remove("animate-movie-r");
-  moviep.classList.remove("animate-movie-p");
-  moviebtns.classList.remove("animate-movie-btn");
-}
-
-/* Function to apply animations with proper browser sync */
-function applyAnimations() {
-  // Force reflow to ensure DOM is updated before animation
-  removeAnimations();
-
-  // Use requestAnimationFrame for perfect browser sync
-  requestAnimationFrame(() => {
-    moviedesfull.classList.add("animate-description");
-    movied1.classList.add("animate-movied-1");
-    movieh.classList.add("animate-movie-h");
-    movier.classList.add("animate-movie-r");
-    moviep.classList.add("animate-movie-p");
-    moviebtns.classList.add("animate-movie-btn");
   });
-}
 
+  /* Eventlistener for changing the background of nav bar on scroll */
 
-
-/* Eventlistener for changing the background of nav bar on scroll */
-
-window.addEventListener("scroll", function () {
-  const navbar = this.document.querySelector(".logo-menu-container");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+  window.addEventListener("scroll", function () {
+    const navbar = this.document.querySelector(".logo-menu-container");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+};
