@@ -18,6 +18,12 @@ const slide1 = document.querySelector(".slide1");
 const slide0 = document.querySelector(".slide0");
 const slide2 = document.querySelector(".slide2");
 const slide3 = document.querySelector(".slide3");
+const moviedesfull = document.querySelector(".movie-description");
+const movied1 = document.querySelector(".movied-1");
+const movieh = document.querySelector(".movie-h");
+const movier = document.querySelector(".movie-r");
+const moviep = document.querySelector(".movie-p");
+const moviebtns = document.querySelector(".movie-btn");
 
 const slidingArray = [slide0, slide1, slide2, slide3];
 /* CardArray (MovieCards) */
@@ -90,6 +96,9 @@ function changebg() {
 
   bgLayer.style.opacity = 0;
 
+  // Remove animation classes before reapplying
+  removeAnimations();
+
   homebg.style.backgroundImage = `radial-gradient(
       farthest-side at 70% 40%,
       rgb(0, 0, 0),
@@ -117,6 +126,9 @@ function changebg() {
     secondsmall.innerHTML = imagesArray[counter].genre2;
     year.innerHTML = imagesArray[counter].year;
     moviedes.innerHTML = imagesArray[counter].description;
+
+    // Trigger animations
+    applyAnimations();
 
     let card;
     for (let i = 0; i < imagesArray.length; i++) {
@@ -185,27 +197,84 @@ window.Select = function (cardItem) {
     item.style.opacity = 0.5;
   });
 
-  bgLayer.style.backgroundImage = ` radial-gradient(
+  // Remove animation classes before reapplying
+  removeAnimations();
+
+  // Fade out background
+  bgLayer.style.opacity = 0;
+
+  homebg.style.backgroundImage = `radial-gradient(
       farthest-side at 70% 40%,
-      rgba(255, 255, 255, 0.126),
-      rgba(0, 0, 0, 0.625),
+      rgb(0, 0, 0),
+      rgb(0, 0, 0),
       rgb(0, 0, 0)
-    ),url(${imagesArray[cardItem].bg})`;
-  movieName.textContent = `${imagesArray[cardItem].name}`;
-  time.textContent = `${imagesArray[cardItem].duration}`;
-  year.textContent = `${imagesArray[cardItem].year}`;
-  moviedes.textContent = `${imagesArray[cardItem].description}`;
-  star.textContent = `${imagesArray[cardItem].rating}`;
-  firstsmall.textContent = `${imagesArray[cardItem].genre1}`;
-  secondsmall.textContent = `${imagesArray[cardItem].genre2}`;
+    )`;
 
-  const element = cardArray.find((value, index) => {
-    return index == cardItem;
-  });
+  setTimeout(() => {
+    bgLayer.style.backgroundImage = `
+      radial-gradient(
+        farthest-side at 70% 40%,
+        rgba(255, 255, 255, 0.126),
+        rgba(0, 0, 0, 0.625),
+        rgb(0, 0, 0)
+      ),
+      url(${imagesArray[cardItem].bg})
+    `;
 
-  element.style.opacity = 1;
-  element.style.border = "3px solid yellow";
+    bgLayer.style.opacity = 1;
+
+    movieName.innerHTML = `${imagesArray[cardItem].name}`;
+    time.textContent = `${imagesArray[cardItem].duration}`;
+    year.textContent = `${imagesArray[cardItem].year}`;
+    moviedes.textContent = `${imagesArray[cardItem].description}`;
+    star.textContent = `${imagesArray[cardItem].rating}`;
+    firstsmall.textContent = `${imagesArray[cardItem].genre1}`;
+    secondsmall.textContent = `${imagesArray[cardItem].genre2}`;
+
+    const element = cardArray.find((value, index) => {
+      return index == cardItem;
+    });
+
+    element.style.opacity = 1;
+    element.style.border = "3px solid yellow";
+
+    // Trigger animations
+    applyAnimations();
+  }, 300);
+
+  // Set counter to current card and restart auto-sliding after 5 seconds
+  counter = cardItem + 1;
+  if (intervalID) {
+    clearInterval(intervalID);
+  }
+  intervalID = setInterval(changebg, 5000);
 };
+
+/* Function to remove animations */
+function removeAnimations() {
+  moviedesfull.classList.remove("animate-description");
+  movied1.classList.remove("animate-movied-1");
+  movieh.classList.remove("animate-movie-h");
+  movier.classList.remove("animate-movie-r");
+  moviep.classList.remove("animate-movie-p");
+  moviebtns.classList.remove("animate-movie-btn");
+}
+
+/* Function to apply animations with proper browser sync */
+function applyAnimations() {
+  // Force reflow to ensure DOM is updated before animation
+  removeAnimations();
+
+  // Use requestAnimationFrame for perfect browser sync
+  requestAnimationFrame(() => {
+    moviedesfull.classList.add("animate-description");
+    movied1.classList.add("animate-movied-1");
+    movieh.classList.add("animate-movie-h");
+    movier.classList.add("animate-movie-r");
+    moviep.classList.add("animate-movie-p");
+    moviebtns.classList.add("animate-movie-btn");
+  });
+}
 
 
 
