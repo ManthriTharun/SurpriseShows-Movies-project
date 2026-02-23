@@ -385,3 +385,513 @@
 .animate-movie-btn {
   animation: uniformSlideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.4s;
 }
+
+
+/* The second page  */
+.container2{
+  height: 250vh;
+  background-color:black;
+  background-size: cover;
+}
+
+
+/* movie menu styless */
+.movie-menu{
+  padding: 0 3.4rem 6rem 3.4rem;
+}
+.movie-items{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem;
+}
+.movie-items li{
+  width: fit-content;
+  height:3rem;
+  list-style-type: none;
+  background-color: rgba(53, 66, 79, 0.619);
+  font-size: 1.4rem;
+  color:rgba(255, 255, 255, 0.799);
+  font-weight: medium;
+  border-radius:2rem;
+  padding: 0.9em 1.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.movie-posters-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 7.4rem 0 7rem;
+}
+.movie-rows{
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+  margin:0 0 10rem 0;
+}
+.poster-header{
+  color:rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  font-size: 1.5rem;
+}
+.poster-heading{
+  display: flex;
+  flex-direction: column;
+  gap:1.5rem;
+}
+.poster-heading p{
+ font-size: 1.5rem;
+  color:rgba(255, 255, 255, 0.799);
+  font-weight: lighter;
+}
+.poster-btn{
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.6rem;
+  align-items: center;
+  justify-content: center;
+}
+.poster-btn i{
+  background-color:rgba(0, 0, 0, 0.484);
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  padding:1.8rem 2rem;
+  border-radius: 60%;
+  color:white;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+.movie-poster{
+  width:20rem;
+  height: 32rem;
+  border-radius: 2rem;
+  background-color: green;
+}
+.poster-holder{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.poster-section{
+  display: flex;
+  gap:3rem;
+  width:fit-content;
+  transition: all 0.5s ease-in-out;
+}
+.poster-box{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height:40rem;
+  color:rgb(255, 255, 255);
+}
+
+.poster-holder::-webkit-scrollbar {
+  display: none;
+  scroll-behavior:auto;
+  scroll-snap-type: mandatory;
+}
+.medium-btn {
+  font-size: 1.4rem;
+  position: absolute;
+  left:1.7rem;
+  top:32rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) ;
+
+}
+.movie-poster:hover .medium-btn {
+   left:1.7rem;
+  top:25rem;
+  background-size: 130%;
+ 
+}
+.movie-poster{
+  position: relative;
+  padding:1.2rem;
+  overflow: hidden;
+}
+.movie-poster-rating{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.movie-poster-rating>span{
+  background-color: rgba(0, 0, 0, 0.457);
+  color:white;
+  padding:0.4rem 0.6rem ;
+  border-radius: 2rem;
+}
+.star-font,.fa-plus{
+  font-size: 1.2rem;
+
+}
+
+/* container3 start your journey */
+.container3{
+  height: 90vh;
+  background-color: black;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0;
+}
+.start-journey{
+  background: rgba(48, 48, 48, 0.399);
+  border-radius: 2rem;
+  width:90%;
+  height: 40rem;
+  padding:2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+
+}
+
+.start-container{
+  display: flex;
+}
+.start-btn{
+  display: flex;
+  gap: 2rem;
+  
+}
+.start-heading{
+  font-size: 5rem;
+  font-weight: bold;
+  color:white;
+}
+.start-heading span{
+  
+  color:transparent;
+  background:linear-gradient(to right, rgb(223, 2, 2), rgb(236, 174, 6));
+ -webkit-background-clip: text;
+  background-clip: text;
+  
+  -webkit-text-fill-color: transparent;
+}
+.view-btn{
+  background-color: rgba(10, 7, 7, 0.655);
+}
+.mposter1{
+  background: url(./images/g2.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter1:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter2{
+  background: url(./images/andhraking.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter2:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter3{
+  background: url(./images/major.jpg);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter3:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter4{
+  background: url(./images/salaar.jpeg);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter4:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter5{
+  background: url(./images/thandel.avif);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter5:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter6{
+  background: url(./images/funky.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+} 
+.mposter6:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter7{
+  background: url(./images/girlfriend.avif);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter7:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter8{
+  background: url(./images/dacoit.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter8:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter9{
+  background: url(./images/pushpa\ 2.jpg);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+
+.mposter9:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.mposter10{
+  background: url(./images/kingdom.jpg);
+  background-size: 120%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter10:hover{
+  background-size: 135%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.mposter11{
+  background: url(./images/kgf.jpg);
+  background-size: 120%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter11:hover{
+  background-size: 135%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter12{
+  background: url(./images/mahavatara.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter12:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter13{
+  background: url(./images/devara.jpg);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter13:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter14{
+  background: url(./images/pushpa\ 2.jpg);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter14:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter15{
+  background: url(./images/jathi.avif);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter15:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter16{
+  background: url(./images/RRRpo.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+} 
+.mposter16:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter17{
+  background: url(./images/mirai.jpg);
+  background-size: 275%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter17:hover{
+  background-size: 300%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter18{
+  background: url(./images/hit\ 3.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter18:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter19{
+  background: url(./images/rajasaab.avif);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+
+.mposter19:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.mposter20{
+  background: url(./images/maharshi.jpg);
+  background-size: 120%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter20:hover{
+  background-size: 135%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter21{
+  background: url(./images/varanasi.jpg);
+  background-size: 245%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter21:hover{
+  background-size: 275%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter22{
+  background: url(./images/peddi.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter22:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter23{
+  background: url(./images/biker.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter23:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter24{
+  background: url(./images/toxic.webp);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter24:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter25{
+  background: url(./images/g2.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter25:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter26{
+  background: url(./images/dacoit.jpg);
+  background-size: 120%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter26:hover{
+  background-size: 135%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter27{
+  background: url(./images/funky.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+} 
+.mposter27:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter28{
+  background: url(./images/girlfriend.avif);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter28:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter29{
+  background: url(./images/liitle.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter29:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.mposter30{
+  background: url(./images/sardar\ 2.jpg);
+  background-size: 115%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+
+.mposter30:hover{
+  background-size: 130%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.mposter30{
+  background: url(./images/spirit.jpg);
+  background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
+}
+.mposter30:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}

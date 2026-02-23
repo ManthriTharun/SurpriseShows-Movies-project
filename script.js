@@ -24,6 +24,8 @@ const movieh = document.querySelector(".movie-h");
 const movier = document.querySelector(".movie-r");
 const moviep = document.querySelector(".movie-p");
 const moviebtns = document.querySelector(".movie-btn");
+const rightArrow = document.querySelector(".fa-angle-right");
+const leftArrow = document.querySelector(".fa-angle-left");
 
 const slidingArray = [slide0, slide1, slide2, slide3];
 /* CardArray (MovieCards) */
@@ -286,3 +288,78 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("scrolled");
   }
 });
+
+/* Initialize carousel position tracking for each poster section */
+const carouselPositions = new Map();
+const SCROLL_AMOUNT = 25; // percentage to scroll
+
+/* Function to initialize carousel tracking */
+function initializeCarousels() {
+  document
+    .querySelectorAll(".movie-posters-container")
+    .forEach((container, index) => {
+      carouselPositions.set(index, 0);
+    });
+}
+
+/* Function to handle carousel movement */
+function moveCarousel(direction, posterBtn) {
+  // Get the closest poster-section to the clicked button
+  const posterHolder = posterBtn.closest(".movie-posters-container");
+  if (!posterHolder) return;
+
+  const posterSection = posterHolder.querySelector(".poster-section");
+  const posterContainer = posterHolder.querySelector(".poster-holder");
+  const posters = posterSection.querySelectorAll(".movie-poster");
+
+  // Check if there's content
+  if (!posters || posters.length === 0) return;
+
+  // Get the container index for tracking position
+  const allContainers = Array.from(
+    document.querySelectorAll(".movie-posters-container"),
+  );
+  const containerIndex = allContainers.indexOf(posterHolder);
+
+  let currentPosition = carouselPositions.get(containerIndex) || 0;
+
+  // Calculate max position based on actual element dimensions
+  // This ensures the carousel stops exactly when the last poster is visible
+  const maxScrollWidth =
+    posterSection.scrollWidth - posterContainer.clientWidth;
+  const maxPosition = (maxScrollWidth / posterSection.scrollWidth) * 100;
+
+  // Calculate new position based on direction
+  let newPosition = currentPosition;
+  if (direction === "right" && currentPosition < maxPosition) {
+    newPosition = Math.min(currentPosition + SCROLL_AMOUNT, maxPosition);
+  } else if (direction === "left" && currentPosition > 0) {
+    newPosition = Math.max(currentPosition - SCROLL_AMOUNT, 0);
+  } else {
+    // Don't move if at boundary or no content - carousel is idle
+    return;
+  }
+
+  // Update position and apply smooth transform with transition
+  carouselPositions.set(containerIndex, newPosition);
+  posterSection.style.transform = `translateX(-${newPosition}%)`;
+}
+
+/* Add event listeners to all arrow buttons */
+document.querySelectorAll(".poster-btn").forEach((posterBtn) => {
+  const rightArrow = posterBtn.querySelector(".fa-angle-right");
+  const leftArrow = posterBtn.querySelector(".fa-angle-left");
+
+  if (rightArrow) {
+    rightArrow.addEventListener("click", () =>
+      moveCarousel("right", posterBtn),
+    );
+  }
+
+  if (leftArrow) {
+    leftArrow.addEventListener("click", () => moveCarousel("left", posterBtn));
+  }
+});
+
+/* Initialize carousel positions */
+initializeCarousels();
