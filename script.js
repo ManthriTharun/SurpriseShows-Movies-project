@@ -26,6 +26,136 @@ const moviep = document.querySelector(".movie-p");
 const moviebtns = document.querySelector(".movie-btn");
 const rightArrow = document.querySelector(".fa-angle-right");
 const leftArrow = document.querySelector(".fa-angle-left");
+const posterSection1 = document.querySelector(".poster-section1");
+const posterSection2 = document.querySelector(".poster-section2");
+const posterSection3 = document.querySelector(".poster-section3");
+const TrendingMovies = [
+  { name: "Major", rating: 8.1, image: "./images/major.jpg" },
+  { name: "Andhra King", rating: 8.2, image: "./images/andhraKing.jpg" },
+  { name: "Baahubali 2", rating: 8.2, image: "./images/bhahubali2.jpg" },
+  { name: "Jersey", rating: 8.5, image: "./images/small.jpeg" },
+  { name: "Devara", rating: 6.8, image: "./images/devaraposter1.jpg" },
+  { name: "Kantara", rating: 8.4, image: "./images/kantara.png" },
+  { name: "Pushpa 2", rating: 8.3, image: "./images/pushpa2.jpg" },
+  { name: "RRR", rating: 8.1, image: "./images/rrr.jpg" },
+  { name: "Sita Ramam", rating: 8.0, image: "./images/sitaramam.webp" },
+  { name: "Vikram", rating: 8.0, image: "./images/vikram.jpg" },
+];
+const TopRatedMovies = [
+  {
+    name: "Kantara: Chapter 1",
+    rating: 8.5,
+    image: "./images/kantara.png",
+  },
+  {
+    name: "L2: Empuraan",
+    rating: 8.2,
+    image: "./images/epuraan.webp",
+  },
+  {
+    name: "HIT 3",
+
+    rating: 7.9,
+    image: "./images/hit3.jpg",
+  },
+  {
+    name: "Good Bad Ugly",
+    rating: 7.7,
+    image: "./images/goodbad.webp",
+  },
+  {
+    name: "Sankranthiki Vastunnam",
+    rating: 7.6,
+    image: "./images/sankranthi.jpg",
+  },
+  {
+    name: "Court: State vs A Nobody",
+    rating: 8.1,
+    image: "./images/court.jpg",
+  },
+  {
+    name: "OG",
+    rating: 8.5,
+    image: "./images/ogg.jpg",
+  },
+  {
+    name: "Kubera",
+    rating: 7.9,
+    image: "./images/kubera.jpg",
+  },
+  {
+    name: "Eleven",
+    rating: 7.6,
+    image: "./images/eleven.webp",
+  },
+  {
+    name: "Coolie",
+    rating: 8.1,
+    image: "./images/coolie.jpg",
+  },
+];
+const Comingsoon = [
+  {
+    name: "The Raja Saab",
+    releaseDate: "2026-01-09",
+    likes: "507.2K",
+    image: "./images/rajasaab.avif",
+  },
+  {
+    name: "Jana Nayagan",
+    releaseDate: "2026-01-09",
+    likes: "271.6K",
+    image: "./images/jananayagan.jpg",
+  },
+  {
+    name: "Toxic: A Fairy Tale for Grown-Ups",
+    releaseDate: "2026-03-19",
+    likes: "57K",
+    image: "./images/toxic.webp",
+  },
+  {
+    name: "The Paradise",
+    releaseDate: "2026-03-26",
+    likes: "24.7K",
+    image: "./images/paradise.jpg",
+  },
+  {
+    name: "Peddi",
+    releaseDate: "2026-03-27",
+    likes: "21.6K",
+    image: "./images/peddi.jpg",
+  },
+  {
+    name: "G2 (Goodachari 2)",
+    releaseDate: "2026-05-01",
+    likes: "—",
+    image: "./images/g2.jpg", // no data yet
+  },
+  {
+    name: "Jailer 2",
+    releaseDate: "2026-06-12",
+    likes: "—",
+    image: "./images/jailer2.webp",
+  },
+  {
+    name: "Dragon (NTRNeel)",
+    releaseDate: "2026-08-14",
+    likes: "—",
+    image: "./images/ntrneel.jpg",
+  },
+  {
+    name: "Fauzi",
+    releaseDate: "2026-08-28",
+    likes: "—",
+    image: "./images/fauzi.jpg",
+  },
+  {
+    name: "Dacoit",
+    releaseDate: "2026-04-10",
+    likes: "59k",
+    image: "./images/dacoit.jpg",
+  },
+];
 
 const slidingArray = [slide0, slide1, slide2, slide3];
 /* CardArray (MovieCards) */
@@ -286,6 +416,77 @@ window.addEventListener("scroll", function () {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
+  }
+});
+
+TrendingMovies.forEach((movie, index) => {
+  const moviePoster = `<div class="poster-box">
+            <div class="movie-poster mposter${index + 1}">
+            <div class="movie-poster-rating">
+            <span class="star star-font"><i class="fa-solid fa-star" style="color:rgb(255, 196, 0);"></i> 
+            <span class="star1">${movie.rating}</span>
+            </span>
+            <span><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <button class="watch-now-btn medium-btn">
+                  <i class="fa-solid fa-play"></i>Watch Now
+                </button>
+                </div>
+                <div class="poster-des"><h2>${movie.name}</h2></div>
+          </div>`;
+
+  posterSection1.insertAdjacentHTML("beforeend", moviePoster);
+  const posterElement = posterSection1.querySelector(`.mposter${index + 1}`);
+  if (posterElement) {
+    posterElement.style.backgroundImage = `url(${movie.image})`;
+  }
+});
+
+TopRatedMovies.forEach((movie, index) => {
+  const moviePoster1 = `<div class="poster-box">
+            <div class="movie-poster mposter${index + 11}">
+            <div class="movie-poster-rating">
+            <span class="star star-font"><i class="fa-solid fa-star" style="color:rgb(255, 196, 0);"></i> 
+            <span class="star1">${movie.rating}</span>
+            </span>
+            <span><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <button class="watch-now-btn medium-btn">
+                  <i class="fa-solid fa-play"></i>Watch Now
+                </button>
+                </div>
+                <div class="poster-des"><h2>${movie.name}</h2></div>
+          </div>`;
+
+  posterSection2.insertAdjacentHTML("beforeend", moviePoster1);
+  const posterElement2 = posterSection2.querySelector(`.mposter${index + 11}`);
+
+  if (posterElement2) {
+    posterElement2.style.backgroundImage = `url(${movie.image})`;
+  }
+});
+
+Comingsoon.forEach((movie, index) => {
+  const moviePoster2 = `<div class="poster-box">
+            <div class="movie-poster mposter${index + 21}">
+            <div class="movie-poster-rating">
+            <span class="star star-font"><i class="fa-regular fa-heart" style="color:rgb(202, 65, 230);"></i> 
+            <span class="star1">${movie.likes}</span>
+            </span>
+            <span><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <button class="watch-now-btn medium-btn">
+                  <i class="fa-solid fa-play"></i>Watch Now
+                </button>
+                </div>
+                <div class="poster-des"><h2>${movie.name}</h2></div>
+          </div>`;
+
+  posterSection3.insertAdjacentHTML("beforeend", moviePoster2);
+  const posterElement3 = posterSection3.querySelector(`.mposter${index + 21}`);
+
+  if (posterElement3) {
+    posterElement3.style.backgroundImage = `url(${movie.image})`;
   }
 });
 

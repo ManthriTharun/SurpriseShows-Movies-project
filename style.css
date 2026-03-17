@@ -469,13 +469,24 @@
   width:20rem;
   height: 32rem;
   border-radius: 2rem;
-  background-color: green;
+    position: relative;
+  padding:1.2rem;
+  overflow: hidden;
+   background-size: 130%;
+  background-position: center;
+  transition:all 0.3s linear;
 }
+.movie-poster:hover{
+  background-size: 145%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+
 .poster-holder{
   overflow-x: scroll;
   overflow-y: hidden;
 }
-.poster-section{
+.poster-section ,.poster-section1,.poster-section2{
   display: flex;
   gap:3rem;
   width:fit-content;
@@ -508,11 +519,7 @@
   background-size: 130%;
  
 }
-.movie-poster{
-  position: relative;
-  padding:1.2rem;
-  overflow: hidden;
-}
+
 .movie-poster-rating{
   display: flex;
   justify-content: space-between;
@@ -577,7 +584,7 @@
 }
 .view-btn{
   background-color: rgba(10, 7, 7, 0.655);
-}
+}/* 
 .mposter1{
   background: url(./images/g2.jpg);
   background-size: 130%;
@@ -679,8 +686,8 @@
 .mposter10:hover{
   background-size: 135%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
+} */
+/* 
 .mposter11{
   background: url(./images/kgf.jpg);
   background-size: 120%;
@@ -782,7 +789,7 @@
 .mposter20:hover{
   background-size: 135%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
+} */
 .mposter21{
   background: url(./images/varanasi.jpg);
   background-size: 245%;
