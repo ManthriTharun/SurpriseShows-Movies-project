@@ -3,9 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Surprise Show New Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="new.css" />
   </head>
   <body>
+    <div class="logo-menu-container">
+      <div class="logo-container">
+        <i class="fa-solid fa-film"></i>
+        <p class="main-logo">SurpriseShows</p>
+      </div>
+      <div class="menu-container">
+        <ul class="menu-list">
+          <li>Home</li>
+          <li>Movies</li>
+          <li>Geners</li>
+          <li>Watchlist</li>
+        </ul>
+      </div>
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-regular fa-heart"></i>
+        <button class="ctn-btn">Sign up</button>
+      </div>
+    </div>
+    <div class="movie-container">
+        <div class="back-to-page"><span><i class="fa-solid fa-arrow-left"></i></span> <span>Back to Home</span></div>
+        <div class="movie-box">
+            <div class="movie-poster" id='movie-poster'></div>
+           <div class="movie-description">
+            <p class="movied-1"><span class="small-btn firstsmall" id='firstsmall'>Sports</span
+              ><span class="small-btn secondsmall" id='secondsmall'>Emotional</span></p>
+            <h1 class="movie-h" id='movie-h'>Jersey</h1>
+            <div class="movie-r" id='movie-r'>
+              <span class="star" id='pink'><i class="fa-solid fa-star" id="fa-star"></i> <span class="star1" id="star1">8.5</span></span
+              ><span class="year" id='year'>2019</span
+              ><span class="clockP"
+                ><i class="fa-regular fa-clock"></i><span id='duration'> 2h 40m</span></span
+              >
+            </div>
+            <div class="director">Directed by <span id='directed'></span>
+            </div>
+            <p class="movie-p" id="movie-p">
+             A talented but failed cricketer in his 30s decides to return to the game to fulfill his son’s dream, proving that passion and determination have no age limit.
+            </p>
+            <div class="movie-btn">
+              <button class="watch-now-btn" onclick="newPage('Jersey')">
+                <i class="fa-solid fa-play"></i>Watch Now
+              </button>
+              <button class="watch-list-btn">
+                <i class="fa-solid fa-plus"></i>Watchlist
+              </button> 
+            </div>
+          </div>
+        </div>
+    </div>
     <script src="new.js"></script>
   </body>
 </html>

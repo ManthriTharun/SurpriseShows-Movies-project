@@ -210,6 +210,15 @@ const imagesArray = [
   },
 ];
 
+
+
+
+window.newPage = function (movieName, type) {
+  ((window.location.href =
+    "newpage.html?clicked=" + movieName + "&type=" + type),
+    (target = "_parent"));
+};
+
 /* TimeInterval for changing background */
 let intervalID = setInterval(changebg, 7000);
 let counter = 0;
@@ -428,7 +437,7 @@ TrendingMovies.forEach((movie, index) => {
             </span>
             <span><i class="fa-solid fa-plus"></i></span>
             </div>
-            <button class="watch-now-btn medium-btn">
+            <button class="watch-now-btn medium-btn" onclick="newPage('${movie.name}','trending')">
                   <i class="fa-solid fa-play"></i>Watch Now
                 </button>
                 </div>
@@ -451,7 +460,7 @@ TopRatedMovies.forEach((movie, index) => {
             </span>
             <span><i class="fa-solid fa-plus"></i></span>
             </div>
-            <button class="watch-now-btn medium-btn">
+            <button class="watch-now-btn medium-btn" onclick="newPage('${movie.name}','toprated')">
                   <i class="fa-solid fa-play"></i>Watch Now
                 </button>
                 </div>
@@ -475,7 +484,7 @@ Comingsoon.forEach((movie, index) => {
             </span>
             <span><i class="fa-solid fa-plus"></i></span>
             </div>
-            <button class="watch-now-btn medium-btn">
+            <button class="watch-now-btn medium-btn" onclick="newPage('${movie.name}','comingsoon')">
                   <i class="fa-solid fa-play"></i>Watch Now
                 </button>
                 </div>
